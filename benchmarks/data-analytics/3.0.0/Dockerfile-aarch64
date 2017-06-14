@@ -1,4 +1,4 @@
-FROM cloudsuite/hadoop
+FROM cloudsuite/hadoop:latest-aarch64
 
 ENV MAHOUT_VERSION 0.12.2
 ENV MAHOUT_HOME /opt/mahout-${MAHOUT_VERSION}

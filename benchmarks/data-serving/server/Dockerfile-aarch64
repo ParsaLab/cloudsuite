@@ -1,0 +1,18 @@
+FROM cloudsuite/java:latest-aarch64
+
+RUN apt-get update \
+	&& apt-get install wget \
+	&&  wget http://archive.apache.org/dist/cassandra/2.1.12/apache-cassandra-2.1.12-bin.tar.gz \
+	&& tar -xvzf apache-cassandra-2.1.12-bin.tar.gz
+
+ENV CASSANDRA_HOME apache-cassandra-2.1.12 
+ENV CASSANDRA_CONFIG $CASSANDRA_HOME/conf
+ENV PATH $PATH:$CASSANDRA_HOME/bin
+
+COPY setup_tables.txt /setup_tables.txt
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod +x /docker-entrypoint.sh
+CMD ["cassandra"]
+ENTRYPOINT ["/docker-entrypoint.sh"]
+
+EXPOSE 7000 7001 7199 9042 9160
