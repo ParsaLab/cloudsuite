@@ -37,8 +37,11 @@ env:
 
   
   # Memcached
-  - DH_REPO="cloudsuite/memcached" IMG_TAG="latest" DF_PATH="./commons/memcached/1.5.9"
-  - DH_REPO="cloudsuite/memcached" IMG_TAG="1.5.9" DF_PATH="./commons/memcached/1.5.9"
+  - DH_REPO="cloudsuite/memcached" IMG_TAG="latest" DF_PATH="./commons/memcached/1.5.10"
+  - DH_REPO="cloudsuite/memcached" IMG_TAG="1.5.10" DF_PATH="./commons/memcached/1.5.10"
+
+  - DH_REPO="cloudsuite/memcached" IMG_TAG="latest-aarch64" DF_PATH="./commons/memcached/1.5.10" DF_NAME="Dockerfile_aarch64"
+  - DH_REPO="cloudsuite/memcached" IMG_TAG="1.5.10-aarch64" DF_PATH="./commons/memcached/1.5.10" DF_NAME="Dockerfile_aarch64"
 
   # Datasets
   # Movielens
@@ -55,9 +58,15 @@ env:
   - DH_REPO="cloudsuite/data-caching" IMG_TAG="server" DF_PATH="./benchmarks/data-caching/server"
   - DH_REPO="cloudsuite/data-caching" IMG_TAG="client" DF_PATH="./benchmarks/data-caching/client"
 
+  - DH_REPO="cloudsuite/data-caching" IMG_TAG="server-aarch64" DF_PATH="./benchmarks/data-caching/server" DF_NAME="Dockerfile_aarch64"
+  - DH_REPO="cloudsuite/data-caching" IMG_TAG="client-aarch64" DF_PATH="./benchmarks/data-caching/client" DF_NAME="Dockerfile_aarch64"
+
   # Data Serving
   - DH_REPO="cloudsuite/data-serving" IMG_TAG="server" DF_PATH="./benchmarks/data-serving/server"
   - DH_REPO="cloudsuite/data-serving" IMG_TAG="client" DF_PATH="./benchmarks/data-serving/client"
+
+  - DH_REPO="cloudsuite/data-serving" IMG_TAG="server-aarch64" DF_PATH="./benchmarks/data-serving/server" DF_NAME="Dockerfile_aarch64"
+  - DH_REPO="cloudsuite/data-serving" IMG_TAG="client-aarch64" DF_PATH="./benchmarks/data-serving/client" DF_NAME="Dockerfile_aarch64"
 
   # Graph Analytics
   - DH_REPO="cloudsuite/graph-analytics" IMG_TAG="3.0" DF_PATH="./benchmarks/graph-analytics/3.0"
